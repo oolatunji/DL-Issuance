@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "View Pregenerated Cards";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/viewpregeneratedcard")
+<aside class="content-wrapper sidebarLeft">
+    <div class="content container-fluid sidebarRight animated fadeInUp">
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="panel panel-white">
+                    <div class="panel-body content-title-container">
+                        <div class="right">
+                            <ol class="breadcrumb breadcrumb-theme breadcrumb-sm breadcrumb-green">
+                                <li><a href="~/Home/Dashboard">Dashboard</a></li>
+                                <li><a>Card Management</a></li>
+                                <li class="active"><a>View Pregenerated Cards</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="panel panel-white">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Pregenerated Cards</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table id="example" class="cell-border order-column" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Card Number</th>
+                                    <th>Branch</th>
+                                    <th>Issued</th>
+                                    <th>Date Uploaded</th>
+                                </tr>
+                            </thead>
+
+                            <tfoot>
+                                <tr>
+                                    <th>Card Number</th>
+                                    <th>Branch</th>
+                                    <th>Issued</th>
+                                    <th>Date Uploaded</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</aside>
+
+
+

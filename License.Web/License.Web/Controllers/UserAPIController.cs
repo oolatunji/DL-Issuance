@@ -210,10 +210,10 @@ namespace License.Web.Controllers
             try
             {
                 string password = PasswordHash.MD5Hash(passwordModel.Password);
-                dynamic userObj = UserPL.AuthenticateUser(passwordModel.Username, password);
+                var userObj = UserPL.AuthenticateUser(passwordModel.Username, password);
                 if (userObj != null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, (object)userObj);
+                    return Request.CreateResponse(HttpStatusCode.OK, userObj);
                 }
                 else
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid Username/Password");

@@ -40,7 +40,6 @@ namespace License.Web
                       "~/Scripts/nav.js",
                       "~/Scripts/Utility/configFile.js",
                       "~/Scripts/Utility/messageBox.js",
-                      "~/Scripts/Utility/SystemConfiguration.js",
                       "~/Scripts/custom.js",
                       "~/Scripts/Login/Login.js"
                       ));
@@ -65,10 +64,6 @@ namespace License.Web
             bundles.Add(new ScriptBundle("~/bundles/resetpassword").Include(
                     "~/Scripts/Password/PasswordReset.js"
                     ));
-
-            bundles.Add(new ScriptBundle("~/bundles/configureSystem").Include(
-                     "~/Scripts/Utility/ConfigureSystem.js"
-                     ));
 
             bundles.Add(new ScriptBundle("~/bundles/addfunctions").Include(
                       "~/Scripts/Function/AddFunction.js"
@@ -102,17 +97,13 @@ namespace License.Web
                       "~/Scripts/User/ViewUser.js"
                       ));
 
-            bundles.Add(new ScriptBundle("~/bundles/viewsmartcards").Include(
-                      "~/Scripts/SmartCard/ViewSmartCard.js"
-                      ));
-
-            bundles.Add(new ScriptBundle("~/bundles/addprinters").Include(
-                     "~/Scripts/Printer/AddPrinter.js"
+            bundles.Add(new ScriptBundle("~/bundles/uploadpregeneratedcard").Include(
+                     "~/Scripts/Card/UploadPregeneratedCard.js"
                      ));
 
-            bundles.Add(new ScriptBundle("~/bundles/viewprinters").Include(
-                      "~/Scripts/Printer/ViewPrinter.js"
-                      ));
+            bundles.Add(new ScriptBundle("~/bundles/viewpregeneratedcard").Include(
+                     "~/Scripts/Card/ViewPregeneratedCard.js"
+                     ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",

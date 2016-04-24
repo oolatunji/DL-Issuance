@@ -113,20 +113,19 @@ namespace LicenseLibrary
             }
         }
 
-        public static dynamic AuthenticateUser(string username, string password)
+        public static UserDetails AuthenticateUser(string username, string password)
         {
             try
             {
-                User user = UserDL.AuthenticateUser(username, password);
+                var userObj = new UserDetails();
+                var user = UserDL.AuthenticateUser(username, password);
                 if (user != null)
                 {
-                    dynamic userObj = new ExpandoObject();
-
-                    List<dynamic> userFunctions = new List<dynamic>();
+                    var userFunctions = new List<FunctionModel>();
 
                     foreach (RoleFunction roleFunction in user.Role.RoleFunctions)
                     {
-                        dynamic function = new
+                        var function = new FunctionModel
                         {
                             Name = roleFunction.Function.Name,
                             PageLink = roleFunction.Function.PageLink
@@ -138,12 +137,9 @@ namespace LicenseLibrary
                     userObj.ID = user.ID;
                     userObj.Username = user.Username;
                     userObj.Role = user.Role.Name;
-                    userObj.SmartCard = user.SmartCard != null ? Crypter.Decrypt(System.Configuration.ConfigurationManager.AppSettings.Get("ekey"), user.SmartCard.EncryptedSmartCardID) : "None";
                     userObj.Function = userFunctions;
-
-                    return userObj;
                 }
-                return user;
+                return userObj;
             }
             catch (Exception ex)
             {

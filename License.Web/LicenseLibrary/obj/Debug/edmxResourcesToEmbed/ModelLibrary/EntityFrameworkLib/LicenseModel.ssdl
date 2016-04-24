@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LicenseDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="CardAccountRequests">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameOnCard" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintStatus" Type="int" />
+    <Property Name="UserPrinting" Type="nvarchar" MaxLength="50" />
+    <Property Name="DATE" Type="datetime" />
+    <Property Name="printedName" Type="nvarchar" MaxLength="50" />
+    <Property Name="HolderIDNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="HolderAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="HolderPhoto" Type="image" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="emailaddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="sex" Type="nchar" MaxLength="10" />
+    <Property Name="Nationality" Type="nchar" MaxLength="10" />
+    <Property Name="UtilityBill" Type="nchar" MaxLength="10" />
+    <Property Name="Updateddate" Type="datetime" />
+    <Property Name="UploaderID" Type="bigint" />
+    <Property Name="BranchID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Enrolment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="150" />
+    <Property Name="Middlename" Type="nvarchar" MaxLength="150" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="EffectedDate" Type="datetime" />
+    <Property Name="LicenseType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="RightThumb" Type="image" />
+    <Property Name="RightIndex" Type="image" />
+    <Property Name="LeftThumb" Type="image" />
+    <Property Name="LeftIndex" Type="image" />
+    <Property Name="Branch" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Functions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PageLink" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PregeneratedCards">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="250" />
+    <Property Name="HashedCardNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Branch" Type="bigint" />
+    <Property Name="DateUploaded" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RoleFunctions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID" Type="bigint" Nullable="false" />
+    <Property Name="FunctionID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SmartCard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EncryptedSmartCardID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HashedSmartCardID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Allocated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Othernames" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="UserRole" Type="bigint" />
+    <Property Name="HashedPassword" Type="nvarchar" MaxLength="255" />
+    <Property Name="SmartCardID" Type="bigint" />
+    <Property Name="UserBranch" Type="bigint" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="FirstTime" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Enrolment_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+    <End Role="Enrolment" Type="Self.Enrolment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Enrolment">
+        <PropertyRef Name="Branch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PregeneratedCards_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+    <End Role="PregeneratedCards" Type="Self.PregeneratedCards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PregeneratedCards">
+        <PropertyRef Name="Branch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleFunctions_RoleFunctions">
+    <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+    <End Role="RoleFunctions" Type="Self.RoleFunctions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Functions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoleFunctions">
+        <PropertyRef Name="FunctionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleFunctions_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="RoleFunctions" Type="Self.RoleFunctions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoleFunctions">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="UserBranch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="UserRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_SmartCard">
+    <End Role="SmartCard" Type="Self.SmartCard" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SmartCard">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="SmartCardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LicenseDBModelStoreContainer">
+    <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CardAccountRequests" EntityType="Self.CardAccountRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Enrolment" EntityType="Self.Enrolment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Functions" EntityType="Self.Functions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PregeneratedCards" EntityType="Self.PregeneratedCards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleFunctions" EntityType="Self.RoleFunctions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SmartCard" EntityType="Self.SmartCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Enrolment_Branch" Association="Self.FK_Enrolment_Branch">
+      <End Role="Branch" EntitySet="Branch" />
+      <End Role="Enrolment" EntitySet="Enrolment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PregeneratedCards_Branch" Association="Self.FK_PregeneratedCards_Branch">
+      <End Role="Branch" EntitySet="Branch" />
+      <End Role="PregeneratedCards" EntitySet="PregeneratedCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleFunctions_RoleFunctions" Association="Self.FK_RoleFunctions_RoleFunctions">
+      <End Role="Functions" EntitySet="Functions" />
+      <End Role="RoleFunctions" EntitySet="RoleFunctions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleFunctions_Roles" Association="Self.FK_RoleFunctions_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RoleFunctions" EntitySet="RoleFunctions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Branch" Association="Self.FK_Users_Branch">
+      <End Role="Branch" EntitySet="Branch" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_SmartCard" Association="Self.FK_Users_SmartCard">
+      <End Role="SmartCard" EntitySet="SmartCard" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

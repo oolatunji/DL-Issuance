@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92AC2523-C59C-440F-9D78-CAB64D475A58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LicenseLibrary</RootNamespace>
+    <AssemblyName>LicenseLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataLibrary\BranchDL.cs" />
+    <Compile Include="DataLibrary\FunctionDL.cs" />
+    <Compile Include="DataLibrary\RoleDL.cs" />
+    <Compile Include="DataLibrary\UserDL.cs" />
+    <Compile Include="ModelLibrary\EntityFrameworkLib\Branch.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\CardAccountRequest.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\Enrolment.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\Function.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\LicenseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\LicenseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\LicenseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\PregeneratedCard.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\Role.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\RoleFunction.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\SmartCard.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\EntityFrameworkLib\User.cs">
+      <DependentUpon>LicenseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelLibrary\Utility\Base64Conversions.cs" />
+    <Compile Include="ModelLibrary\Utility\Crypter.cs" />
+    <Compile Include="ModelLibrary\Utility\ErrorHandler.cs" />
+    <Compile Include="ModelLibrary\Utility\Mail.cs" />
+    <Compile Include="ModelLibrary\Utility\MailHelper.cs" />
+    <Compile Include="ModelLibrary\Utility\PasswordHash.cs" />
+    <Compile Include="ModelLibrary\Utility\RijndaelEnhanced.cs" />
+    <Compile Include="ModelLibrary\Utility\StatusUtil.cs" />
+    <Compile Include="ProcessLibrary\BranchPL.cs" />
+    <Compile Include="ProcessLibrary\FunctionPL.cs" />
+    <Compile Include="ProcessLibrary\RolePL.cs" />
+    <Compile Include="ProcessLibrary\UserPL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EntityDeploy Include="ModelLibrary\EntityFrameworkLib\LicenseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LicenseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ModelLibrary\EntityFrameworkLib\LicenseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LicenseModel.edmx</DependentUpon>
+      <LastGenOutput>LicenseModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ModelLibrary\EntityFrameworkLib\LicenseModel.edmx.diagram">
+      <DependentUpon>LicenseModel.edmx</DependentUpon>
+    </None>
+    <None Include="ModelLibrary\EntityFrameworkLib\LicenseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LicenseModel.edmx</DependentUpon>
+      <LastGenOutput>LicenseModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

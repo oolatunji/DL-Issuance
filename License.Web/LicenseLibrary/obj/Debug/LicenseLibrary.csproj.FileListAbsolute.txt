@@ -1,0 +1,10 @@
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\obj\Debug\LicenseLibrary.csprojResolveAssemblyReference.cache
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\bin\Debug\LicenseLibrary.dll.config
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\bin\Debug\LicenseLibrary.dll
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\bin\Debug\LicenseLibrary.pdb
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\bin\Debug\EntityFramework.dll
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\bin\Debug\EntityFramework.xml
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\obj\Debug\LicenseLibrary.dll
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\LicenseLibrary\obj\Debug\LicenseLibrary.pdb

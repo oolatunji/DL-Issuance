@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LicenseDBModelStoreContainer" CdmEntityContainer="LicenseDBEntities">
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="LicenseDBModel.Branch">
+        <MappingFragment StoreEntitySet="Branch">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CardAccountRequests">
+      <EntityTypeMapping TypeName="LicenseDBModel.CardAccountRequest">
+        <MappingFragment StoreEntitySet="CardAccountRequests">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+          <ScalarProperty Name="PAN" ColumnName="PAN" />
+          <ScalarProperty Name="PrintStatus" ColumnName="PrintStatus" />
+          <ScalarProperty Name="UserPrinting" ColumnName="UserPrinting" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="printedName" ColumnName="printedName" />
+          <ScalarProperty Name="HolderIDNumber" ColumnName="HolderIDNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="HolderAddress" ColumnName="HolderAddress" />
+          <ScalarProperty Name="HolderPhoto" ColumnName="HolderPhoto" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="OtherName" ColumnName="OtherName" />
+          <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="UtilityBill" ColumnName="UtilityBill" />
+          <ScalarProperty Name="Updateddate" ColumnName="Updateddate" />
+          <ScalarProperty Name="UploaderID" ColumnName="UploaderID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enrolments">
+      <EntityTypeMapping TypeName="LicenseDBModel.Enrolment">
+        <MappingFragment StoreEntitySet="Enrolment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EffectedDate" ColumnName="EffectedDate" />
+          <ScalarProperty Name="LicenseType" ColumnName="LicenseType" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="RightThumb" ColumnName="RightThumb" />
+          <ScalarProperty Name="RightIndex" ColumnName="RightIndex" />
+          <ScalarProperty Name="LeftThumb" ColumnName="LeftThumb" />
+          <ScalarProperty Name="LeftIndex" ColumnName="LeftIndex" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Functions">
+      <EntityTypeMapping TypeName="LicenseDBModel.Function">
+        <MappingFragment StoreEntitySet="Functions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PageLink" ColumnName="PageLink" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PregeneratedCards">
+      <EntityTypeMapping TypeName="LicenseDBModel.PregeneratedCard">
+        <MappingFragment StoreEntitySet="PregeneratedCards">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="HashedCardNumber" ColumnName="HashedCardNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="DateUploaded" ColumnName="DateUploaded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleFunctions">
+      <EntityTypeMapping TypeName="LicenseDBModel.RoleFunction">
+        <MappingFragment StoreEntitySet="RoleFunctions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="LicenseDBModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmartCards">
+      <EntityTypeMapping TypeName="LicenseDBModel.SmartCard">
+        <MappingFragment StoreEntitySet="SmartCard">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EncryptedSmartCardID" ColumnName="EncryptedSmartCardID" />
+          <ScalarProperty Name="HashedSmartCardID" ColumnName="HashedSmartCardID" />
+          <ScalarProperty Name="Allocated" ColumnName="Allocated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="LicenseDBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Othernames" ColumnName="Othernames" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+          <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+          <ScalarProperty Name="SmartCardID" ColumnName="SmartCardID" />
+          <ScalarProperty Name="UserBranch" ColumnName="UserBranch" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="FirstTime" ColumnName="FirstTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

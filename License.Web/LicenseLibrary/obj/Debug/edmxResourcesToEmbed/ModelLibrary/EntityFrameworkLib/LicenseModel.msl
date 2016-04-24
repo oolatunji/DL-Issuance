@@ -11,53 +11,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CardAccountRequests">
-      <EntityTypeMapping TypeName="LicenseDBModel.CardAccountRequest">
-        <MappingFragment StoreEntitySet="CardAccountRequests">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
-          <ScalarProperty Name="PAN" ColumnName="PAN" />
-          <ScalarProperty Name="PrintStatus" ColumnName="PrintStatus" />
-          <ScalarProperty Name="UserPrinting" ColumnName="UserPrinting" />
-          <ScalarProperty Name="DATE" ColumnName="DATE" />
-          <ScalarProperty Name="printedName" ColumnName="printedName" />
-          <ScalarProperty Name="HolderIDNumber" ColumnName="HolderIDNumber" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="HolderAddress" ColumnName="HolderAddress" />
-          <ScalarProperty Name="HolderPhoto" ColumnName="HolderPhoto" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="OtherName" ColumnName="OtherName" />
-          <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
-          <ScalarProperty Name="sex" ColumnName="sex" />
-          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
-          <ScalarProperty Name="UtilityBill" ColumnName="UtilityBill" />
-          <ScalarProperty Name="Updateddate" ColumnName="Updateddate" />
-          <ScalarProperty Name="UploaderID" ColumnName="UploaderID" />
-          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Enrolments">
-      <EntityTypeMapping TypeName="LicenseDBModel.Enrolment">
-        <MappingFragment StoreEntitySet="Enrolment">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
-          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="EffectedDate" ColumnName="EffectedDate" />
-          <ScalarProperty Name="LicenseType" ColumnName="LicenseType" />
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
-          <ScalarProperty Name="RightThumb" ColumnName="RightThumb" />
-          <ScalarProperty Name="RightIndex" ColumnName="RightIndex" />
-          <ScalarProperty Name="LeftThumb" ColumnName="LeftThumb" />
-          <ScalarProperty Name="LeftIndex" ColumnName="LeftIndex" />
-          <ScalarProperty Name="Branch" ColumnName="Branch" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Functions">
       <EntityTypeMapping TypeName="LicenseDBModel.Function">
         <MappingFragment StoreEntitySet="Functions">
@@ -124,6 +77,48 @@
           <ScalarProperty Name="UserBranch" ColumnName="UserBranch" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="FirstTime" ColumnName="FirstTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CardAccountRequests">
+      <EntityTypeMapping TypeName="LicenseDBModel.CardAccountRequest">
+        <MappingFragment StoreEntitySet="CardAccountRequests">
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="DatePrinted" ColumnName="DatePrinted" />
+          <ScalarProperty Name="DateEnroled" ColumnName="DateEnroled" />
+          <ScalarProperty Name="UserPrinting" ColumnName="UserPrinting" />
+          <ScalarProperty Name="PrintStatus" ColumnName="PrintStatus" />
+          <ScalarProperty Name="FingerPrintRight" ColumnName="FingerPrintRight" />
+          <ScalarProperty Name="FingerIdRight" ColumnName="FingerIdRight" />
+          <ScalarProperty Name="FingerPrintLeft" ColumnName="FingerPrintLeft" />
+          <ScalarProperty Name="FingerIdLeft" ColumnName="FingerIdLeft" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+          <ScalarProperty Name="ValidTillDate" ColumnName="ValidTillDate" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="LicenseType" ColumnName="LicenseType" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="LocalGovernmentArea" ColumnName="LocalGovernmentArea" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="UtilityBill" ColumnName="UtilityBill" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="MothersMaidenName" ColumnName="MothersMaidenName" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="PrintedName" ColumnName="PrintedName" />
+          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="HashedCardSerialNumber" ColumnName="HashedCardSerialNumber" />
+          <ScalarProperty Name="CardSerialNumber" ColumnName="CardSerialNumber" />
+          <ScalarProperty Name="LicenseID" ColumnName="LicenseID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -154,5 +154,42 @@ namespace LicenseLibrary
             }
         }
 
+        public static CardDetails GetCardSerialNumber()
+        {
+            try
+            {
+                string key = System.Configuration.ConfigurationManager.AppSettings.Get("ekey");
+
+                var returnedPregeneratedCard = new CardDetails();
+
+                var pregeneratedCard = CardDL.GetCardSerialNumber();
+
+                if (pregeneratedCard != null)
+                {
+                    CardDetails pCard = new CardDetails
+                    {
+                        ID = pregeneratedCard.ID,
+                        CardNumber = Crypter.Decrypt(key, pregeneratedCard.CardNumber),
+                        Issued = Convert.ToBoolean(pregeneratedCard.Status),
+                        Branch = pregeneratedCard.Branch1.Name,
+                        BranchID = pregeneratedCard.Branch1.ID,
+                        DateUploaded = Convert.ToDateTime(pregeneratedCard.DateUploaded).ToString("MM/dd/yyyy")
+                    };
+
+                    returnedPregeneratedCard = pCard;
+                }
+                else
+                {
+                    returnedPregeneratedCard = null;
+                }
+
+                return returnedPregeneratedCard;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

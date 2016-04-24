@@ -26,13 +26,12 @@ namespace LicenseLibrary.ModelLibrary.EntityFrameworkLib
         }
     
         public virtual DbSet<Branch> Branches { get; set; }
-        public virtual DbSet<CardAccountRequest> CardAccountRequests { get; set; }
-        public virtual DbSet<Enrolment> Enrolments { get; set; }
         public virtual DbSet<Function> Functions { get; set; }
         public virtual DbSet<PregeneratedCard> PregeneratedCards { get; set; }
         public virtual DbSet<RoleFunction> RoleFunctions { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<SmartCard> SmartCards { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<CardAccountRequest> CardAccountRequests { get; set; }
     }
 }

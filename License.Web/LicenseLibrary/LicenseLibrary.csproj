@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLibrary\BranchDL.cs" />
+    <Compile Include="DataLibrary\CardAccountRequestDL.cs" />
     <Compile Include="DataLibrary\CardDL.cs" />
     <Compile Include="DataLibrary\FunctionDL.cs" />
     <Compile Include="DataLibrary\RoleDL.cs" />
@@ -62,9 +63,6 @@
       <DependentUpon>LicenseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelLibrary\EntityFrameworkLib\CardAccountRequest.cs">
-      <DependentUpon>LicenseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelLibrary\EntityFrameworkLib\Enrolment.cs">
       <DependentUpon>LicenseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelLibrary\EntityFrameworkLib\Function.cs">

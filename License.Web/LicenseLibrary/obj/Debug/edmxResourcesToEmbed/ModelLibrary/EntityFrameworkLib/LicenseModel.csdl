@@ -8,55 +8,8 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Enrolments" Relationship="Self.FK_Enrolment_Branch" FromRole="Branch" ToRole="Enrolment" />
     <NavigationProperty Name="PregeneratedCards" Relationship="Self.FK_PregeneratedCards_Branch" FromRole="Branch" ToRole="PregeneratedCards" />
     <NavigationProperty Name="Users" Relationship="Self.FK_Users_Branch" FromRole="Branch" ToRole="Users" />
-  </EntityType>
-  <EntityType Name="CardAccountRequest">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NameOnCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PrintStatus" Type="Int32" />
-    <Property Name="UserPrinting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="DATE" Type="DateTime" Precision="3" />
-    <Property Name="printedName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="HolderIDNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="HolderAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="HolderPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="emailaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Nationality" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="UtilityBill" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Updateddate" Type="DateTime" Precision="3" />
-    <Property Name="UploaderID" Type="Int64" />
-    <Property Name="BranchID" Type="Int64" />
-  </EntityType>
-  <EntityType Name="Enrolment">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Lastname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Firstname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Middlename" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="EffectedDate" Type="DateTime" Precision="3" />
-    <Property Name="LicenseType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="RightThumb" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="RightIndex" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="LeftThumb" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="LeftIndex" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="Branch" Type="Int64" />
-    <NavigationProperty Name="Branch1" Relationship="Self.FK_Enrolment_Branch" FromRole="Enrolment" ToRole="Branch" />
   </EntityType>
   <EntityType Name="Function">
     <Key>
@@ -131,18 +84,6 @@
     <NavigationProperty Name="Role" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
     <NavigationProperty Name="SmartCard" Relationship="Self.FK_Users_SmartCard" FromRole="Users" ToRole="SmartCard" />
   </EntityType>
-  <Association Name="FK_Enrolment_Branch">
-    <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
-    <End Role="Enrolment" Type="Self.Enrolment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Branch">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Enrolment">
-        <PropertyRef Name="Branch" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_PregeneratedCards_Branch">
     <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
     <End Role="PregeneratedCards" Type="Self.PregeneratedCard" Multiplicity="*" />
@@ -217,18 +158,12 @@
   </Association>
   <EntityContainer Name="LicenseDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Branches" EntityType="Self.Branch" />
-    <EntitySet Name="CardAccountRequests" EntityType="Self.CardAccountRequest" />
-    <EntitySet Name="Enrolments" EntityType="Self.Enrolment" />
     <EntitySet Name="Functions" EntityType="Self.Function" />
     <EntitySet Name="PregeneratedCards" EntityType="Self.PregeneratedCard" />
     <EntitySet Name="RoleFunctions" EntityType="Self.RoleFunction" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="SmartCards" EntityType="Self.SmartCard" />
     <EntitySet Name="Users" EntityType="Self.User" />
-    <AssociationSet Name="FK_Enrolment_Branch" Association="Self.FK_Enrolment_Branch">
-      <End Role="Branch" EntitySet="Branches" />
-      <End Role="Enrolment" EntitySet="Enrolments" />
-    </AssociationSet>
     <AssociationSet Name="FK_PregeneratedCards_Branch" Association="Self.FK_PregeneratedCards_Branch">
       <End Role="Branch" EntitySet="Branches" />
       <End Role="PregeneratedCards" EntitySet="PregeneratedCards" />
@@ -253,5 +188,47 @@
       <End Role="SmartCard" EntitySet="SmartCards" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
+    <EntitySet Name="CardAccountRequests" EntityType="LicenseDBModel.CardAccountRequest" />
   </EntityContainer>
+  <EntityType Name="CardAccountRequest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LicenseID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CardSerialNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HashedCardSerialNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NameOnCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MothersMaidenName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UtilityBill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LocalGovernmentArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BloodGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LicenseType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValidTillDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FingerIdLeft" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FingerPrintLeft" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FingerIdRight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FingerPrintRight" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PrintStatus" Type="Int32" />
+    <Property Name="UserPrinting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateEnroled" Type="DateTime" Precision="3" />
+    <Property Name="DatePrinted" Type="DateTime" Precision="3" />
+    <Property Name="BranchID" Type="Int64" />
+  </EntityType>
 </Schema>

@@ -7,7 +7,8 @@ namespace License.Web
 {
     public class Response
     {
-        public bool Successful { get; set; }
+        public string Result { get; set; }
+        public long RecordID { get; set; }
         public string ErrMessage { get; set; } 
     }
 }

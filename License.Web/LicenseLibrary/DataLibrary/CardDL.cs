@@ -70,6 +70,28 @@ namespace LicenseLibrary
             }
         }
 
+        public static PregeneratedCard GetCardSerialNumber()
+        {
+            try
+            {
+                var existingCard = new PregeneratedCard();
+                using (var context = new LicenseDBEntities())
+                {
+                    existingCard = context.PregeneratedCards
+                                    .Include("Branch1")
+                                    .Where(t => t.Status == false)
+                                    .Take(1)
+                                    .FirstOrDefault();
+                }
+
+                return existingCard;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static List<PregeneratedCard> RetrievePregeneratedCards()
         {
             try

@@ -16,7 +16,6 @@ namespace LicenseLibrary.ModelLibrary.EntityFrameworkLib
     {
         public Branch()
         {
-            this.Enrolments = new HashSet<Enrolment>();
             this.PregeneratedCards = new HashSet<PregeneratedCard>();
             this.Users = new HashSet<User>();
         }
@@ -26,7 +25,6 @@ namespace LicenseLibrary.ModelLibrary.EntityFrameworkLib
         public string Code { get; set; }
         public string Address { get; set; }
     
-        public virtual ICollection<Enrolment> Enrolments { get; set; }
         public virtual ICollection<PregeneratedCard> PregeneratedCards { get; set; }
         public virtual ICollection<User> Users { get; set; }
     }

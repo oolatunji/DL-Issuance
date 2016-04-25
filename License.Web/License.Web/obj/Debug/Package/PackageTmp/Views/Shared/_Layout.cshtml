@@ -199,8 +199,58 @@
                         </ul>
                     </li>
                     <li class="border-left-blue">
+                        <!-- 'data-target' attribute must mactch the id of the submenu dropdown -->
+                        <a href="javascript:void(0);" name="parent_links" data-toggle="collapse" data-target="#enrolment-submenu" title="Card Management">
+                            <i class="menu-icon fa fa-lg fa-fw fa-book"></i> <span>Enrolment Management</span>
+                            <i class="fa fa-caret-right submenu-indicator"></i>
+                        </a>
+                        <!-- Sub Menu Item -->
+                        <ul id="enrolment-submenu" class="collapse">
+                            <!-- Menu Item -->
+                            <li>
+                                <a href="~/Enrolment/ViewEnrolments" id="/Enrolment/ViewEnrolments" class="fa fa-plus-square" style="font-size:13px;" name="links"> View Enrolments</a>
+                            </li>
+                            <!-- End Menu Item -->
+                        </ul>
+                    </li>
+                    <li class="border-left-green">
+                        <!-- 'data-target' attribute must mactch the id of the submenu dropdown -->
+                        <a href="javascript:void(0);" name="parent_links" data-toggle="collapse" data-target="#violation-submenu" title="Card Management">
+                            <i class="menu-icon fa fa-lg fa-fw fa-ban"></i> <span>Violation Management</span>
+                            <i class="fa fa-caret-right submenu-indicator"></i>
+                        </a>
+                        <!-- Sub Menu Item -->
+                        <ul id="violation-submenu" class="collapse">
+                            <!-- Menu Item -->
+                            <li>
+                                <a href="~/Violation/AddViolation" id="/Violation/AddViolation" class="fa fa-plus-square" style="font-size:13px;" name="links"> Add Violation</a>
+                            </li>
+                            <!-- End Menu Item -->
+                            <!-- Menu Item -->
+                            <li>
+                                <a href="~/Violation/ViewViolations" id="/Violation/ViewViolations" class="fa fa-folder" style="font-size:13px;" name="links"> View Violations</a>
+                            </li>
+                            <!-- End Menu Item -->
+                        </ul>
+                    </li>
+                    <li class="border-left-green">
+                        <!-- 'data-target' attribute must mactch the id of the submenu dropdown -->
+                        <a href="javascript:void(0);" name="parent_links" data-toggle="collapse" data-target="#fine-submenu" title="Card Management">
+                            <i class="menu-icon fa fa-lg fa-fw fa-money"></i> <span>Violation Management</span>
+                            <i class="fa fa-caret-right submenu-indicator"></i>
+                        </a>
+                        <!-- Sub Menu Item -->
+                        <ul id="fine-submenu" class="collapse">
+                            <!-- Menu Item -->
+                            <li>
+                                <a href="~/Fine/ViewFines" id="/Fine/ViewFines" class="fa fa-folder" style="font-size:13px;" name="links"> View Fines</a>
+                            </li>
+                            <!-- End Menu Item -->
+                        </ul>
+                    </li>
+                    <li class="border-left-blue">
                         <a href="~/User/ChangePassword" title="Change Password">
-                            <i class="menu-icon fa fa-lg fa-fw fa-credit-card"></i> <span>Change Password</span>
+                            <i class="menu-icon fa fa-lg fa-fw fa-compass"></i> <span>Change Password</span>
                         </a>
                     </li>
                     <!-- End Menu Item -->

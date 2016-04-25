@@ -511,6 +511,26 @@ namespace License.Web
         {
             try
             {
+                var car = CardAccountRequestDL.GetCardAccountRequestByLicenseID(fine.LicenseID);
+
+                if (car == null)
+                {
+                    return new Response
+                    {
+                        Result = "Failed",
+                        RecordID = 0,
+                        ErrMessage = string.Format("Invalid License ID: {0}", fine.LicenseID)
+                    };
+                }
+                else if (car.ID == 0)
+                {
+                    return new Response
+                    {
+                        Result = "Failed",
+                        RecordID = 0,
+                        ErrMessage = string.Format("Invalid License ID: {0}", fine.LicenseID)
+                    };
+                }
                 long fineID = 0;
                 bool saved = FineDL.Save(fine, out fineID);
                 if(saved)

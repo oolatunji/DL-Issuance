@@ -108,14 +108,14 @@ namespace LicenseLibrary
             }
         }
 
-        public static long RecordsToBePrinted()
+        public static long RecordsToBePrinted(long branchID)
         {
             try
             {
                 using (var context = new LicenseDBEntities())
                 {
                     var cars = context.CardAccountRequests
-                                    .Where(x => x.PrintStatus == 1)
+                                    .Where(x => x.PrintStatus == 1 && x.BranchID == branchID)
                                     .ToList();
 
                     return cars.Any() ? cars.Count() : 0;
@@ -153,7 +153,7 @@ namespace LicenseLibrary
             }
         }
 
-        public static List<CardAccountRequest> GetListofDataWithSearch(string name, string fileNo, string licenseNo)
+        public static List<CardAccountRequest> GetListofDataWithSearch(string name, string fileNo, string licenseNo, long branchID)
         {
             try
             {
@@ -162,7 +162,7 @@ namespace LicenseLibrary
                     var cars = context.CardAccountRequests
                                     .Where(x => (x.Lastname.Contains(name) 
                                         || x.FirstName.Contains(name) 
-                                        || x.MiddleName.Contains(name)))
+                                        || x.MiddleName.Contains(name)) && x.BranchID == branchID)
                                     .ToList();
 
                     if(!string.IsNullOrEmpty(fileNo))
@@ -184,14 +184,14 @@ namespace LicenseLibrary
             }
         }
 
-        public static List<CardAccountRequest> GetListofData()
+        public static List<CardAccountRequest> GetListofData(long branchID)
         {
             try
             {
                 using (var context = new LicenseDBEntities())
                 {
                     var cars = context.CardAccountRequests
-                                    .Where(x => x.PrintStatus == 1)
+                                    .Where(x => x.PrintStatus == 1 && x.BranchID == branchID)
                                     .ToList();
 
                     return cars;

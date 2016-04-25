@@ -70,21 +70,34 @@ namespace LicenseLibrary
             }
         }
 
-        public static PregeneratedCard GetCardSerialNumber()
+        public static PregeneratedCard GetCardSerialNumber(string loggedInUser)
         {
             try
             {
-                var existingCard = new PregeneratedCard();
-                using (var context = new LicenseDBEntities())
+                var user = UserDL.RetrieveUserByUsername(loggedInUser);
+                if(user == null)
                 {
-                    existingCard = context.PregeneratedCards
-                                    .Include("Branch1")
-                                    .Where(t => t.Status == false)
-                                    .Take(1)
-                                    .FirstOrDefault();
+                    throw new Exception("Invalid username");
                 }
+                else if (user.ID == 0)
+                {
+                    throw new Exception("Invalid username");
+                }
+                else
+                {
+                    var existingCard = new PregeneratedCard();
+                    using (var context = new LicenseDBEntities())
+                    {
+                        existingCard = context.PregeneratedCards
+                                        .Include("Branch1")
+                                        .Where(t => t.Status == false && t.Branch == user.UserBranch)
+                                        .Take(1)
+                                        .FirstOrDefault();
+                    }
 
-                return existingCard;
+                    
+                    return existingCard;
+                }
             }
             catch (Exception ex)
             {

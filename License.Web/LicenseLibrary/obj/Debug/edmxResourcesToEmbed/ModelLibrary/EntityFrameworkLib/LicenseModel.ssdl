@@ -50,6 +50,15 @@
     <Property Name="DatePrinted" Type="datetime" />
     <Property Name="BranchID" Type="bigint" />
   </EntityType>
+  <EntityType Name="Fine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LicenseID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Details" Type="text" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
   <EntityType Name="Functions">
     <Key>
       <PropertyRef Name="ID" />
@@ -188,6 +197,7 @@
   <EntityContainer Name="LicenseDBModelStoreContainer">
     <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CardAccountRequests" EntityType="Self.CardAccountRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fine" EntityType="Self.Fine" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Functions" EntityType="Self.Functions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PregeneratedCards" EntityType="Self.PregeneratedCards" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleFunctions" EntityType="Self.RoleFunctions" Schema="dbo" store:Type="Tables" />

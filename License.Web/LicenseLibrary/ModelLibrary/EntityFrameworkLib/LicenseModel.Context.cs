@@ -33,5 +33,6 @@ namespace LicenseLibrary.ModelLibrary.EntityFrameworkLib
         public virtual DbSet<SmartCard> SmartCards { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<CardAccountRequest> CardAccountRequests { get; set; }
+        public virtual DbSet<Fine> Fines { get; set; }
     }
 }

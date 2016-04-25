@@ -189,6 +189,7 @@
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
     <EntitySet Name="CardAccountRequests" EntityType="LicenseDBModel.CardAccountRequest" />
+    <EntitySet Name="Fines" EntityType="LicenseDBModel.Fine" />
   </EntityContainer>
   <EntityType Name="CardAccountRequest">
     <Key>
@@ -230,5 +231,14 @@
     <Property Name="DateEnroled" Type="DateTime" Precision="3" />
     <Property Name="DatePrinted" Type="DateTime" Precision="3" />
     <Property Name="BranchID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Fine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LicenseID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
   </EntityType>
 </Schema>

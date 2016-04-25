@@ -154,7 +154,7 @@ namespace LicenseLibrary
             }
         }
 
-        public static CardDetails GetCardSerialNumber()
+        public static CardDetails GetCardSerialNumber(string loggedInUsername)
         {
             try
             {
@@ -162,7 +162,7 @@ namespace LicenseLibrary
 
                 var returnedPregeneratedCard = new CardDetails();
 
-                var pregeneratedCard = CardDL.GetCardSerialNumber();
+                var pregeneratedCard = CardDL.GetCardSerialNumber(loggedInUsername);
 
                 if (pregeneratedCard != null)
                 {

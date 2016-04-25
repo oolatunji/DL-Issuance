@@ -64,6 +64,7 @@ namespace LicenseLibrary
                 {
                     existingUser = context.Users
                                     .Where(t => t.Username.Equals(username))
+                                    .Include(x => x.Branch)
                                     .FirstOrDefault();
                 }
 

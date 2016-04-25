@@ -122,6 +122,15 @@
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="FirstTime" Type="bit" />
   </EntityType>
+  <EntityType Name="Violations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LicenseID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Details" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
   <Association Name="FK_PregeneratedCards_Branch">
     <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
     <End Role="PregeneratedCards" Type="Self.PregeneratedCards" Multiplicity="*" />
@@ -204,6 +213,7 @@
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SmartCard" EntityType="Self.SmartCard" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Violations" EntityType="Self.Violations" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_PregeneratedCards_Branch" Association="Self.FK_PregeneratedCards_Branch">
       <End Role="Branch" EntitySet="Branch" />
       <End Role="PregeneratedCards" EntitySet="PregeneratedCards" />

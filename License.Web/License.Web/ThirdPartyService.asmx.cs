@@ -230,46 +230,58 @@ namespace License.Web
         {
             try
             {
-                var car = new CardAccountRequest
+                if (enrolmentData.ID != 0)
                 {
-                    ID = enrolmentData.ID,
-                    Lastname = enrolmentData.Lastname,
-                    FirstName = enrolmentData.FirstName,
-                    MiddleName = enrolmentData.MiddleName,
-                    NameOnCard = enrolmentData.NameOnCard,
-                    DateOfBirth = enrolmentData.DateOfBirth,
-                    MaritalStatus = enrolmentData.MaritalStatus,
-                    Sex = enrolmentData.Sex,
-                    Religion = enrolmentData.Religion,
-                    MothersMaidenName = enrolmentData.MothersMaidenName,
-                    Nationality = enrolmentData.Nationality,
-                    UtilityBill = enrolmentData.UtilityBill,
-                    IDNumber = enrolmentData.IDNumber,
-                    LocalGovernmentArea = enrolmentData.LocalGovernmentArea,
-                    BloodGroup = enrolmentData.BloodGroup,
-                    LicenseType = enrolmentData.LicenseType,
-                    IssueDate = enrolmentData.IssueDate,
-                    ValidTillDate = enrolmentData.ValidTillDate,
-                    FileNumber = enrolmentData.FileNumber,
-                    EmailAddress = enrolmentData.EmailAddress,
-                    PhoneNumber = enrolmentData.PhoneNumber,
-                    Address = enrolmentData.Address,
-                    Photo = enrolmentData.Photo,
-                    FingerIdLeft = enrolmentData.FingerIdLeft,
-                    FingerPrintLeft = enrolmentData.FingerPrintLeft,
-                    FingerIdRight = enrolmentData.FingerIdRight,
-                    FingerPrintRight = enrolmentData.FingerPrintRight,
-                };
+                    var car = new CardAccountRequest
+                        {
+                            ID = enrolmentData.ID,
+                            Lastname = enrolmentData.Lastname,
+                            FirstName = enrolmentData.FirstName,
+                            MiddleName = enrolmentData.MiddleName,
+                            NameOnCard = enrolmentData.NameOnCard,
+                            DateOfBirth = enrolmentData.DateOfBirth,
+                            MaritalStatus = enrolmentData.MaritalStatus,
+                            Sex = enrolmentData.Sex,
+                            Religion = enrolmentData.Religion,
+                            MothersMaidenName = enrolmentData.MothersMaidenName,
+                            Nationality = enrolmentData.Nationality,
+                            UtilityBill = enrolmentData.UtilityBill,
+                            IDNumber = enrolmentData.IDNumber,
+                            LocalGovernmentArea = enrolmentData.LocalGovernmentArea,
+                            BloodGroup = enrolmentData.BloodGroup,
+                            LicenseType = enrolmentData.LicenseType,
+                            IssueDate = enrolmentData.IssueDate,
+                            ValidTillDate = enrolmentData.ValidTillDate,
+                            FileNumber = enrolmentData.FileNumber,
+                            EmailAddress = enrolmentData.EmailAddress,
+                            PhoneNumber = enrolmentData.PhoneNumber,
+                            Address = enrolmentData.Address,
+                            Photo = enrolmentData.Photo,
+                            FingerIdLeft = enrolmentData.FingerIdLeft,
+                            FingerPrintLeft = enrolmentData.FingerPrintLeft,
+                            FingerIdRight = enrolmentData.FingerIdRight,
+                            FingerPrintRight = enrolmentData.FingerPrintRight,
+                        };
 
-                long recordID = 0;
-                bool saved = CardAccountRequestDL.Save(car, out recordID);
-                if (saved)
-                {
-                    return new Response
+                    long recordID = 0;
+                    bool saved = CardAccountRequestDL.Save(car, out recordID);
+                    if (saved)
                     {
-                        Result = "Success",
-                        RecordID = recordID,
-                    };
+                        return new Response
+                        {
+                            Result = "Success",
+                            RecordID = recordID,
+                        };
+                    }
+                    else
+                    {
+                        return new Response
+                        {
+                            Result = "Failed",
+                            RecordID = 0,
+                            ErrMessage = "Operation Failed"
+                        };
+                    }
                 }
                 else
                 {
@@ -277,7 +289,7 @@ namespace License.Web
                     {
                         Result = "Failed",
                         RecordID = 0,
-                        ErrMessage = "Operation Failed"
+                        ErrMessage = "Enrolment Data ID is required"
                     };
                 }
             }

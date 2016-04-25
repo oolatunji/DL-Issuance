@@ -5,21 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="abe9839648ff43b7b25212f979f525cc" Name="Diagram1">
-        <EntityTypeShape EntityType="LicenseDBModel.Branch" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicenseDBModel.Function" Width="1.5" PointX="3.75" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicenseDBModel.PregeneratedCard" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicenseDBModel.RoleFunction" Width="1.5" PointX="6" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicenseDBModel.Role" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicenseDBModel.SmartCard" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicenseDBModel.User" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
-        <AssociationConnector Association="LicenseDBModel.FK_PregeneratedCards_Branch" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenseDBModel.FK_Users_Branch" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenseDBModel.FK_RoleFunctions_RoleFunctions" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenseDBModel.FK_RoleFunctions_Roles" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenseDBModel.FK_Users_Roles" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenseDBModel.FK_Users_SmartCard" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LicenseDBModel.Branch" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="LicenseDBModel.Fine" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="LicenseDBModel.Function" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LicenseDBModel.PregeneratedCard" Width="1.5" PointX="3" PointY="19.5" />
+        <EntityTypeShape EntityType="LicenseDBModel.RoleFunction" Width="1.5" PointX="6" PointY="3.75" />
+        <EntityTypeShape EntityType="LicenseDBModel.Role" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LicenseDBModel.SmartCard" Width="1.5" PointX="3.75" PointY="7" />
+        <EntityTypeShape EntityType="LicenseDBModel.User" Width="1.5" PointX="6" PointY="9.375" />
+        <AssociationConnector Association="LicenseDBModel.FK_PregeneratedCards_Branch" />
+        <AssociationConnector Association="LicenseDBModel.FK_Users_Branch" />
+        <AssociationConnector Association="LicenseDBModel.FK_RoleFunctions_RoleFunctions" />
+        <AssociationConnector Association="LicenseDBModel.FK_RoleFunctions_Roles" />
+        <AssociationConnector Association="LicenseDBModel.FK_Users_Roles" />
+        <AssociationConnector Association="LicenseDBModel.FK_Users_SmartCard" />
         <EntityTypeShape EntityType="LicenseDBModel.CardAccountRequest" Width="1.5" PointX="8.375" PointY="0.75" />
-        <EntityTypeShape EntityType="LicenseDBModel.Fine" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LicenseDBModel.Violation" Width="1.5" PointX="0.75" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

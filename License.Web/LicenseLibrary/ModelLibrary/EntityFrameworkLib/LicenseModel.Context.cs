@@ -26,6 +26,7 @@ namespace LicenseLibrary.ModelLibrary.EntityFrameworkLib
         }
     
         public virtual DbSet<Branch> Branches { get; set; }
+        public virtual DbSet<Fine> Fines { get; set; }
         public virtual DbSet<Function> Functions { get; set; }
         public virtual DbSet<PregeneratedCard> PregeneratedCards { get; set; }
         public virtual DbSet<RoleFunction> RoleFunctions { get; set; }
@@ -33,6 +34,6 @@ namespace LicenseLibrary.ModelLibrary.EntityFrameworkLib
         public virtual DbSet<SmartCard> SmartCards { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<CardAccountRequest> CardAccountRequests { get; set; }
-        public virtual DbSet<Fine> Fines { get; set; }
+        public virtual DbSet<Violation> Violations { get; set; }
     }
 }

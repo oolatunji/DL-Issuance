@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LicenseLibrary
 {
-    public class ViolationDTO
+    public class FineDTO
     {
         public string LicenseID { get; set; }
         public string Lastname { get; set; }

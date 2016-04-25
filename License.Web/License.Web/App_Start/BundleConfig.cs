@@ -105,6 +105,22 @@ namespace License.Web
                      "~/Scripts/Card/ViewPregeneratedCard.js"
                      ));
 
+            bundles.Add(new ScriptBundle("~/bundles/addviolation").Include(
+                     "~/Scripts/Violation/AddViolation.js"
+                     ));
+
+            bundles.Add(new ScriptBundle("~/bundles/viewviolations").Include(
+                      "~/Scripts/Violation/ViewViolations.js"
+                      ));
+
+            bundles.Add(new ScriptBundle("~/bundles/viewenrolments").Include(
+                      "~/Scripts/Enrolment/ViewEnrolments.js"
+                      ));
+
+            bundles.Add(new ScriptBundle("~/bundles/viewfines").Include(
+                      "~/Scripts/Fine/ViewFines.js"
+                      ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
                       "~/Content/font-awesome.min.css",

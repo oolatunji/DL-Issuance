@@ -26,35 +26,13 @@ namespace LicenseLibrary
             }
         }
 
-        public static List<ViolationDTO> RetrieveViolations()
+        public static List<Violation> RetrieveViolations()
         {
             try
             {
                 using (var context = new LicenseDBEntities())
                 {
-                    var cars = CardAccountRequestDL.RetrieveCardAccountRequests();
-
-                    var violations = (from violation in context.Violations
-                                      select new ViolationDTO
-                                      {
-                                          LicenseID = violation.LicenseID,
-                                          Lastname = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().Lastname,
-                                          FirstName = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().FirstName,
-                                          MiddleName = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().MiddleName,
-                                          DateOfBirth = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().DateOfBirth,
-                                          MaritalStatus = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().MaritalStatus,
-                                          Sex = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().Sex,
-                                          Religion = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().Religion,
-                                          MothersMaidenName = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().MothersMaidenName,
-                                          EmailAddress = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().EmailAddress,
-                                          PhoneNumber = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().PhoneNumber,
-                                          Address = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().Address.Replace(',',' '),
-                                          Nationality = cars.Where(x => x.LicenseID == violation.LicenseID).FirstOrDefault().Nationality,
-                                          Details = violation.Details,
-                                          Date = Convert.ToDateTime(violation.Date)
-                                      }).ToList();
-                                            
-
+                    var violations = context.Violations.ToList();
                     return violations;
                 }
             }

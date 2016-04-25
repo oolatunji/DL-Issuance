@@ -44,5 +44,22 @@ namespace LicenseLibrary
                 throw ex;
             }
         }
+
+        public static List<Fine> RetrieveAllFines()
+        {
+            try
+            {
+                using (var context = new LicenseDBEntities())
+                {
+                    var fine = context.Fines;
+
+                    return fine.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

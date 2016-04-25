@@ -107,6 +107,7 @@
     <Compile Include="ModelLibrary\EntityFrameworkLib\Violation.cs">
       <DependentUpon>LicenseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelLibrary\FineDTO.cs" />
     <Compile Include="ModelLibrary\FunctionModel.cs" />
     <Compile Include="ModelLibrary\UserDetails.cs" />
     <Compile Include="ModelLibrary\Utility\Base64Conversions.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="ProcessLibrary\BranchPL.cs" />
     <Compile Include="ProcessLibrary\CardAccountRequestPL.cs" />
     <Compile Include="ProcessLibrary\CardPL.cs" />
+    <Compile Include="ProcessLibrary\FinePL.cs" />
     <Compile Include="ProcessLibrary\FunctionPL.cs" />
     <Compile Include="ProcessLibrary\RolePL.cs" />
     <Compile Include="ProcessLibrary\UserPL.cs" />

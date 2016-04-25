@@ -173,6 +173,10 @@
     <Compile Include="Controllers\BranchController.cs" />
     <Compile Include="Controllers\CardAPIController.cs" />
     <Compile Include="Controllers\CardController.cs" />
+    <Compile Include="Controllers\EnrolmentAPIController.cs" />
+    <Compile Include="Controllers\EnrolmentController.cs" />
+    <Compile Include="Controllers\FineAPIController.cs" />
+    <Compile Include="Controllers\FineController.cs" />
     <Compile Include="Controllers\FunctionAPIController.cs" />
     <Compile Include="Controllers\FunctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -182,6 +186,8 @@
     <Compile Include="Controllers\UserAPIController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ViolationAPIController.cs" />
+    <Compile Include="Controllers\ViolationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -313,6 +319,8 @@
     <Content Include="Scripts\dataTables.tableTools.js" />
     <Content Include="Scripts\DynamicMenu\Dashboard.js" />
     <Content Include="Scripts\DynamicMenu\Layout.js" />
+    <Content Include="Scripts\Enrolment\ViewEnrolments.js" />
+    <Content Include="Scripts\Fine\ViewFines.js" />
     <Content Include="Scripts\Function\AddFunction.js" />
     <Content Include="Scripts\Function\ViewFunction.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
@@ -353,6 +361,8 @@
     <Content Include="Scripts\Utility\messageBox.js" />
     <Content Include="Scripts\Utility\SystemConfiguration.js" />
     <Content Include="Scripts\vfs_fonts.js" />
+    <Content Include="Scripts\Violation\AddViolation.js" />
+    <Content Include="Scripts\Violation\ViewViolations.js" />
     <Content Include="Scripts\xcharts.js" />
     <Content Include="Scripts\xcharts.min.js" />
     <None Include="Properties\PublishProfiles\DLIssuance.pubxml" />
@@ -388,6 +398,10 @@
     <Content Include="Views\System\UnAuthorized.cshtml" />
     <Content Include="Views\System\NotFoundError.cshtml" />
     <Content Include="Views\System\InternalServerError.cshtml" />
+    <Content Include="Views\Violation\AddViolation.cshtml" />
+    <Content Include="Views\Violation\ViewViolations.cshtml" />
+    <Content Include="Views\Enrolment\ViewEnrolments.cshtml" />
+    <Content Include="Views\Fine\ViewFines.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

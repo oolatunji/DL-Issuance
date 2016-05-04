@@ -232,45 +232,42 @@ namespace License.Web
             {
                 if (enrolmentData.ID != 0)
                 {
-                    var car = new CardAccountRequest
-                        {
-                            ID = enrolmentData.ID,
-                            Lastname = enrolmentData.Lastname,
-                            FirstName = enrolmentData.FirstName,
-                            MiddleName = enrolmentData.MiddleName,
-                            NameOnCard = enrolmentData.NameOnCard,
-                            DateOfBirth = enrolmentData.DateOfBirth,
-                            MaritalStatus = enrolmentData.MaritalStatus,
-                            Sex = enrolmentData.Sex,
-                            Religion = enrolmentData.Religion,
-                            MothersMaidenName = enrolmentData.MothersMaidenName,
-                            Nationality = enrolmentData.Nationality,
-                            UtilityBill = enrolmentData.UtilityBill,
-                            IDNumber = enrolmentData.IDNumber,
-                            LocalGovernmentArea = enrolmentData.LocalGovernmentArea,
-                            BloodGroup = enrolmentData.BloodGroup,
-                            LicenseType = enrolmentData.LicenseType,
-                            IssueDate = enrolmentData.IssueDate,
-                            ValidTillDate = enrolmentData.ValidTillDate,
-                            FileNumber = enrolmentData.FileNumber,
-                            EmailAddress = enrolmentData.EmailAddress,
-                            PhoneNumber = enrolmentData.PhoneNumber,
-                            Address = enrolmentData.Address,
-                            Photo = enrolmentData.Photo,
-                            FingerIdLeft = enrolmentData.FingerIdLeft,
-                            FingerPrintLeft = enrolmentData.FingerPrintLeft,
-                            FingerIdRight = enrolmentData.FingerIdRight,
-                            FingerPrintRight = enrolmentData.FingerPrintRight,
-                        };
+                    var car = CardAccountRequestDL.RetrieveCardAccountRequestsByID(enrolmentData.ID);
 
-                    long recordID = 0;
-                    bool saved = CardAccountRequestDL.Save(car, out recordID);
+                    car.Lastname = enrolmentData.Lastname;
+                    car.FirstName = enrolmentData.FirstName;
+                    car.MiddleName = enrolmentData.MiddleName;
+                    car.NameOnCard = enrolmentData.NameOnCard;
+                    car.DateOfBirth = enrolmentData.DateOfBirth;
+                    car.MaritalStatus = enrolmentData.MaritalStatus;
+                    car.Sex = enrolmentData.Sex;
+                    car.Religion = enrolmentData.Religion;
+                    car.MothersMaidenName = enrolmentData.MothersMaidenName;
+                    car.Nationality = enrolmentData.Nationality;
+                    car.UtilityBill = enrolmentData.UtilityBill;
+                    car.IDNumber = enrolmentData.IDNumber;
+                    car.LocalGovernmentArea = enrolmentData.LocalGovernmentArea;
+                    car.BloodGroup = enrolmentData.BloodGroup;
+                    car.LicenseType = enrolmentData.LicenseType;
+                    car.IssueDate = enrolmentData.IssueDate;
+                    car.ValidTillDate = enrolmentData.ValidTillDate;
+                    car.FileNumber = enrolmentData.FileNumber;
+                    car.EmailAddress = enrolmentData.EmailAddress;
+                    car.PhoneNumber = enrolmentData.PhoneNumber;
+                    car.Address = enrolmentData.Address;
+                    car.Photo = enrolmentData.Photo;
+                    car.FingerIdLeft = enrolmentData.FingerIdLeft;
+                    car.FingerPrintLeft = enrolmentData.FingerPrintLeft;
+                    car.FingerIdRight = enrolmentData.FingerIdRight;
+                    car.FingerPrintRight = enrolmentData.FingerPrintRight;
+
+                    bool saved = CardAccountRequestDL.Update(car);
                     if (saved)
                     {
                         return new Response
                         {
                             Result = "Success",
-                            RecordID = recordID,
+                            RecordID = car.ID,
                         };
                     }
                     else
@@ -507,10 +504,17 @@ namespace License.Web
         }
 
         [WebMethod]
-        public Response InsertFine(Fine fine)
+        public Response InsertFine(string licenseID, string details)
         {
             try
             {
+                var fine = new Fine
+                {
+                    LicenseID = licenseID,
+                    Details = details,
+                    Date = System.DateTime.Now
+                };
+
                 var car = CardAccountRequestDL.GetCardAccountRequestByLicenseID(fine.LicenseID);
 
                 if (car == null)

@@ -211,12 +211,18 @@ namespace License.Web.Controllers
             {
                 string password = PasswordHash.MD5Hash(passwordModel.Password);
                 var userObj = UserPL.AuthenticateUser(passwordModel.Username, password);
-                if (userObj != null)
+                if (userObj == null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid Username/Password");
+                }
+                else if (userObj.ID == 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid Username/Password");
+                }
+                else
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, userObj);
                 }
-                else
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid Username/Password");
             }
             catch (Exception ex)
             {

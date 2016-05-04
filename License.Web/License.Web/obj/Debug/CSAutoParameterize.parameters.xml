@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="LicenseDBEntities-Web.config Connection String" description="LicenseDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ModelLibrary.EntityFrameworkLib.LicenseModel.csdl|res://*/ModelLibrary.EntityFrameworkLib.LicenseModel.ssdl|res://*/ModelLibrary.EntityFrameworkLib.LicenseModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\sqlexpress;initial catalog=LicenseDB;user id=sa;password=root;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\OLATUNJI\\Documents\\projects\\DL-Issuance\\License\.Web\\License\.Web\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LicenseDBEntities']/@connectionString" />
-  </parameter>
-</parameters>

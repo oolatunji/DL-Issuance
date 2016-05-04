@@ -1,0 +1,6 @@
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\License.Test\bin\Debug\License.Test.exe.config
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\License.Test\bin\Debug\License.Test.exe
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\License.Test\bin\Debug\License.Test.pdb
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\License.Test\obj\Debug\License.Test.csprojResolveAssemblyReference.cache
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\License.Test\obj\Debug\License.Test.exe
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\License.Web\License.Test\obj\Debug\License.Test.pdb

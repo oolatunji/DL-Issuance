@@ -238,7 +238,7 @@ function formatDetails(d) {
     table += '</tr>';
     table += '<tr>';
     table += '<td style="color:navy;width:20%;font-family:Arial;">Issued Date</td>';
-    table += '<td>' + d.IssuedDate + '</td>';
+    table += '<td>' + d.IssueDate + '</td>';
     table += '</tr>';
     table += '<tr>';
     table += '<td style="color:navy;width:20%;font-family:Arial;">Valid Till Date</td>';

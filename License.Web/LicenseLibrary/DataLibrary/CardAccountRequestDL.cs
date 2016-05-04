@@ -237,5 +237,23 @@ namespace LicenseLibrary
                 throw ex;
             }
         }
+
+        public static CardAccountRequest RetrieveCardAccountRequestsByID(long ID)
+        {
+            try
+            {
+                using (var context = new LicenseDBEntities())
+                {
+                    var car = context.CardAccountRequests
+                                    .Where(x => x.ID == ID).FirstOrDefault();
+
+                    return car;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

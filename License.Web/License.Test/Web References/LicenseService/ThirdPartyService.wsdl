@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RetrieveCardDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveCardDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveCardDetailsResult" type="tns:CardDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CardDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Issued" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateUploaded" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BranchID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Branch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="response" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCardSerialNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loggedInUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardSerialNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardSerialNumberResult" type="tns:CardDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key_pd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="tns:UserDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Role" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Function" type="tns:ArrayOfFunctionModel" />
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFunctionModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FunctionModel" nillable="true" type="tns:FunctionModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FunctionModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PageLink" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="enrolmentData" type="tns:EnrolmentModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EnrolmentModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameOnCard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaritalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Religion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MothersMaidenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UtilityBill" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalGovernmentArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodGroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidTillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerIdLeft" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerPrintLeft" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerIdRight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerPrintRight" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserPrinting" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveDataResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecordID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EditData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="enrolmentData" type="tns:EnrolmentModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditDataResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountofRecords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loggedInUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountofRecordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCountofRecordsResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullDataWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullDataWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFullDataWithIDResult" type="tns:CardAccountRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CardAccountRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HashedCardSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameOnCard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrintedName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaritalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Religion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MothersMaidenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UtilityBill" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalGovernmentArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodGroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidTillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerIdLeft" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerPrintLeft" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerIdRight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerPrintRight" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintStatus" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserPrinting" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateEnroled" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatePrinted" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BranchID" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListofDataWithSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loggedInUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListofDataWithSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListofDataWithSearchResult" type="tns:ArrayOfCardAccountRequestModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCardAccountRequestModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CardAccountRequestModel" nillable="true" type="tns:CardAccountRequestModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CardAccountRequestModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameOnCard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaritalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Religion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MothersMaidenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UtilityBill" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalGovernmentArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodGroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidTillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserPrinting" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintStatus" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListofData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loggedInUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListofDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListofDataResult" type="tns:ArrayOfCardAccountRequestModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardSerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licenseNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="printStatus" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPrinting" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="printedName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licenseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertFineResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveFines">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licenseID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveFinesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveFinesResult" type="tns:ArrayOfFine" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Fine" nillable="true" type="tns:Fine" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Fine">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveCardDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveCardDetails" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveCardDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveCardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardSerialNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardSerialNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetCardSerialNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardSerialNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveData" />
+  </wsdl:message>
+  <wsdl:message name="SaveDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditDataSoapIn">
+    <wsdl:part name="parameters" element="tns:EditData" />
+  </wsdl:message>
+  <wsdl:message name="EditDataSoapOut">
+    <wsdl:part name="parameters" element="tns:EditDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountofRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountofRecords" />
+  </wsdl:message>
+  <wsdl:message name="GetCountofRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountofRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFullDataWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFullDataWithID" />
+  </wsdl:message>
+  <wsdl:message name="GetFullDataWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFullDataWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListofDataWithSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListofDataWithSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetListofDataWithSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListofDataWithSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListofDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListofData" />
+  </wsdl:message>
+  <wsdl:message name="GetListofDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListofDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertFineSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertFine" />
+  </wsdl:message>
+  <wsdl:message name="InsertFineSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertFineResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveFinesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveFines" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveFinesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveFinesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ThirdPartyServiceSoap">
+    <wsdl:operation name="RetrieveCardDetails">
+      <wsdl:input message="tns:RetrieveCardDetailsSoapIn" />
+      <wsdl:output message="tns:RetrieveCardDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardSerialNumber">
+      <wsdl:input message="tns:GetCardSerialNumberSoapIn" />
+      <wsdl:output message="tns:GetCardSerialNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveData">
+      <wsdl:input message="tns:SaveDataSoapIn" />
+      <wsdl:output message="tns:SaveDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditData">
+      <wsdl:input message="tns:EditDataSoapIn" />
+      <wsdl:output message="tns:EditDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountofRecords">
+      <wsdl:input message="tns:GetCountofRecordsSoapIn" />
+      <wsdl:output message="tns:GetCountofRecordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullDataWithID">
+      <wsdl:input message="tns:GetFullDataWithIDSoapIn" />
+      <wsdl:output message="tns:GetFullDataWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListofDataWithSearch">
+      <wsdl:input message="tns:GetListofDataWithSearchSoapIn" />
+      <wsdl:output message="tns:GetListofDataWithSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListofData">
+      <wsdl:input message="tns:GetListofDataSoapIn" />
+      <wsdl:output message="tns:GetListofDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatus">
+      <wsdl:input message="tns:UpdateStatusSoapIn" />
+      <wsdl:output message="tns:UpdateStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFine">
+      <wsdl:input message="tns:InsertFineSoapIn" />
+      <wsdl:output message="tns:InsertFineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFines">
+      <wsdl:input message="tns:RetrieveFinesSoapIn" />
+      <wsdl:output message="tns:RetrieveFinesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ThirdPartyServiceSoap" type="tns:ThirdPartyServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveCardDetails">
+      <soap:operation soapAction="http://tempuri.org/RetrieveCardDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardSerialNumber">
+      <soap:operation soapAction="http://tempuri.org/GetCardSerialNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://tempuri.org/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveData">
+      <soap:operation soapAction="http://tempuri.org/SaveData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditData">
+      <soap:operation soapAction="http://tempuri.org/EditData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountofRecords">
+      <soap:operation soapAction="http://tempuri.org/GetCountofRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullDataWithID">
+      <soap:operation soapAction="http://tempuri.org/GetFullDataWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofDataWithSearch">
+      <soap:operation soapAction="http://tempuri.org/GetListofDataWithSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofData">
+      <soap:operation soapAction="http://tempuri.org/GetListofData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFine">
+      <soap:operation soapAction="http://tempuri.org/InsertFine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFines">
+      <soap:operation soapAction="http://tempuri.org/RetrieveFines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ThirdPartyServiceSoap12" type="tns:ThirdPartyServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveCardDetails">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveCardDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardSerialNumber">
+      <soap12:operation soapAction="http://tempuri.org/GetCardSerialNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://tempuri.org/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveData">
+      <soap12:operation soapAction="http://tempuri.org/SaveData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditData">
+      <soap12:operation soapAction="http://tempuri.org/EditData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountofRecords">
+      <soap12:operation soapAction="http://tempuri.org/GetCountofRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullDataWithID">
+      <soap12:operation soapAction="http://tempuri.org/GetFullDataWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofDataWithSearch">
+      <soap12:operation soapAction="http://tempuri.org/GetListofDataWithSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofData">
+      <soap12:operation soapAction="http://tempuri.org/GetListofData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFine">
+      <soap12:operation soapAction="http://tempuri.org/InsertFine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFines">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveFines" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ThirdPartyService">
+    <wsdl:port name="ThirdPartyServiceSoap" binding="tns:ThirdPartyServiceSoap">
+      <soap:address location="http://pajuno.net/PajunoWebsites/LicenseSolution/ThirdPartyService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ThirdPartyServiceSoap12" binding="tns:ThirdPartyServiceSoap12">
+      <soap12:address location="http://pajuno.net/PajunoWebsites/LicenseSolution/ThirdPartyService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

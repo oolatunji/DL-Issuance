@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CardIssuanceWEMAModelStoreContainer" CdmEntityContainer="CardIssuanceWEMAEntities">
+    <EntitySetMapping Name="CardAccountRequests">
+      <EntityTypeMapping TypeName="CardIssuanceWEMAModel.CardAccountRequest">
+        <MappingFragment StoreEntitySet="CardAccountRequests">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+          <ScalarProperty Name="PAN" ColumnName="PAN" />
+          <ScalarProperty Name="PrintStatus" ColumnName="PrintStatus" />
+          <ScalarProperty Name="UserPrinting" ColumnName="UserPrinting" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="Updateddate" ColumnName="Updateddate" />
+          <ScalarProperty Name="printedName" ColumnName="printedName" />
+          <ScalarProperty Name="HolderIDNumber" ColumnName="HolderIDNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="HolderAddress" ColumnName="HolderAddress" />
+          <ScalarProperty Name="HolderPhoto" ColumnName="HolderPhoto" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CardIssuanceWEMAModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

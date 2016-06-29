@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CardIssuanceWEMAEntities-Web.config Connection String" description="CardIssuanceWEMAEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/EntityFramework.CardIssuanceWemaModel.csdl|res://*/EntityFramework.CardIssuanceWemaModel.ssdl|res://*/EntityFramework.CardIssuanceWemaModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\sqlexpress;initial catalog=CardIssuanceWEMA;persist security info=True;user id=sa;password=root;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\OLATUNJI\\Documents\\projects\\DL-Issuance\\ThirdPartyService\\ThirdPartyService\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CardIssuanceWEMAEntities']/@connectionString" />
+  </parameter>
+</parameters>

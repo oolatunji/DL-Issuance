@@ -1,0 +1,10 @@
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\bin\ThirdPartyService.dll.config
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\bin\ThirdPartyService.dll
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\bin\ThirdPartyService.pdb
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\bin\EntityFramework.dll
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\bin\EntityFramework.SqlServer.dll
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\bin\EntityFramework.xml
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\bin\EntityFramework.SqlServer.xml
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\obj\Debug\ThirdPartyService.csprojResolveAssemblyReference.cache
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\obj\Debug\ThirdPartyService.dll
+C:\Users\OLATUNJI\Documents\projects\DL-Issuance\ThirdPartyService\ThirdPartyService\obj\Debug\ThirdPartyService.pdb

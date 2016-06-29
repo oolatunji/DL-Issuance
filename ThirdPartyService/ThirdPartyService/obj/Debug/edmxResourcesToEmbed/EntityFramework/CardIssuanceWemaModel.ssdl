@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CardIssuanceWEMAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CardAccountRequests">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameOnCard" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintStatus" Type="int" />
+    <Property Name="UserPrinting" Type="nvarchar" MaxLength="50" />
+    <Property Name="DATE" Type="datetime" />
+    <Property Name="Updateddate" Type="datetime" />
+    <Property Name="printedName" Type="nvarchar" MaxLength="50" />
+    <Property Name="HolderIDNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="HolderAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="HolderPhoto" Type="image" />
+    <Property Name="InstitutionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="varchar" MaxLength="20" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="OfficialEmail" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CardIssuanceWEMAModelStoreContainer">
+    <EntitySet Name="CardAccountRequests" EntityType="Self.CardAccountRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
